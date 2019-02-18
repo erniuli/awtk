@@ -1,0 +1,1 @@
+add_library(font_gen font_gen.c gen_ascii.c main.c)

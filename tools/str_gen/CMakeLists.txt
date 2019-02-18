@@ -1,0 +1,1 @@
+add_library(str_gen main.cc str_gen.cc xml_str_gen.cc)

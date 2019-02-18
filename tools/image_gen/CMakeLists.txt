@@ -1,0 +1,1 @@
+add_library(image_gen image_gen.c)
