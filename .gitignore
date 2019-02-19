@@ -20,3 +20,5 @@ tags
 .lo
 scripts/update_res_common.pyc
 cmake-build*/
+build*/
+.idea/*

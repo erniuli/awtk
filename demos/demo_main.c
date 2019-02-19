@@ -48,7 +48,7 @@ int main(void) {
   path_build(res_root, MAX_PATH, app_root, "demos", NULL);
   if (!path_exist(res_root)) {
     strcpy(res_root, app_root);
-    log_debug("%s not exist, try %s\n", res_root, app_root);
+//    log_debug("%s not exist, try %s\n", res_root, app_root);
   }
 
 #if defined(WIN32)

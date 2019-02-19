@@ -97,7 +97,20 @@ asset_info_t* assets_manager_load(assets_manager_t* rm, asset_type_t type, const
   char path[MAX_PATH + 1];
   asset_info_t* info = NULL;
   const char* res_root = assets_manager_get_res_root(rm);
-
+  char *result = NULL;
+  result = strtok( res_root, "/" );
+  char str[80];
+  strcpy (str,"/");
+  while( result != NULL ) {
+    strcat(str,result);
+    strcat(str,"/");
+    if(strcmp(result,"awtk") == 0){
+      break;
+    }
+    result = strtok( NULL, "/" );
+  }
+  strcat(str,"demos");
+  strcpy (res_root,str);
   memset(path, 0x00, sizeof(path));
   switch (type) {
     case ASSET_TYPE_FONT: {

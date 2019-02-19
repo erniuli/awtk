@@ -5,15 +5,11 @@ add_library(assets assets.c)
 set(AWTK_LIBS ${AWTK_LIBS} assets CACHE INTERNAL "")
 
 set(AWTK_LIBS ${AWTK_LIBS} ${AWTK_LIBS} CACHE INTERNAL "")
-link_directories( ${LIBAWTK})
+
 message("AWTK_LIBS " ${AWTK_LIBS})
 
 add_executable(demo1 demo_main.c demo1_app.c)
-#target_link_libraries(demo1  assets awtk gpinyin awtk linebreak nanovg  SDL2 font_gen  image_gen
-   #     glad   str_gen common      theme_gen
-    #    -lGL -lgtk-3 -lgdk-3 -lXext -lX11 -lsndio -lstdc++ -lpthread -lm -ldl
-    #    )
-target_link_libraries(demo1 assets awtk gpinyin awtk linebreak nanovg SDL2 glad GL gtk-3 gdk-3 Xext X11 sndio stdc++ pthread m dl)
+target_link_libraries(demo1 ${AWTK_LIBS})
 
 add_executable(demovg demo_main.c demo_vg_app.c)
 target_link_libraries(demovg ${AWTK_LIBS})

@@ -2,12 +2,12 @@ cmake_minimum_required(VERSION 3.0)
 
 project(awtk)
 
-set(ENV{LCD} "SDL_GPU") #设置环境变量LCD为SDL_GPU
+set(ENV{LCD} "SDL_GPU")
 #message("ENV{LCD} $ENV{LCD}")
 set(CMAKE_CXX_STANDARD 11)
 
-set(VGCANVAS "NANOVG" CACHE STRING "")  #   VGCANVAS='NANOVG'
-set(NANOVG_BACKEND "GL3" CACHE STRING "")   #   NANOVG_BACKEND='GL3'
+set(VGCANVAS "NANOVG" CACHE STRING "")
+set(NANOVG_BACKEND "GL3" CACHE STRING "")
 
 set(AWTK_LIBS "" CACHE INTERNAL "")
 set(AWTK_INCLUDES ${CMAKE_CURRENT_LIST_DIR}/3rd
@@ -21,7 +21,6 @@ set(AWTK_INCLUDES ${CMAKE_CURRENT_LIST_DIR}/3rd
         CACHE INTERNAL "")
 
 add_definitions(-DWITH_STB_FONT)
-#add_definitions(-DWITH_FT_FONT)
 add_definitions(-DSTBTT_STATIC)
 add_definitions(-DSTB_IMAGE_STATIC)
 add_definitions(-DWITH_STB_IMAGE)
@@ -39,7 +38,6 @@ add_definitions(-DWITH_VGCANVAS_LCD)
 
 add_definitions(-DWITH_NANOVG_GL3)
 add_definitions(-DWITH_NANOVG_GL)
-#add_definitions(-DWITH_FB_BGR565)
 add_definitions(-DLINUX)
 add_definitions(-DHAS_PTHREAD)
 add_definitions(-DSDL_REAL_API)
